@@ -30,7 +30,10 @@
     "demo/**/*.tsx",
     "demo/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "demo/index.ts"
+    "tests/**/*.tsx",
+    "demo/index.ts",
+    "demo/**/*.png",
+    "demo/**/*.json",
   ],
   "exclude": [
     "node_modules"

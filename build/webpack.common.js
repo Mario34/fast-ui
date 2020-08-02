@@ -24,6 +24,49 @@ module.exports = {
         exclude: /node_modules/,
         options: { cacheDirectory: true },
       },
+      {
+        test: /\.css$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          { loader: "style-loader" },
+          { loader: "css-loader" },
+          { loader: "sass-loader" }
+        ]
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 6000,
+              name: utils.staticPath('images/[name][hash].[ext]'),
+            }
+          }
+        ]
+      },
+      {
+        test: /\.md$/,
+        use: [
+          {
+            loader: 'vue-loader',
+            // options: {
+            //   compilerOptions: {
+            //     preserveWhitespace: false
+            //   }
+            // }
+          },
+          {
+            loader: utils.resolve('build/md-loader/index.js')
+          }
+        ]
+      },
     ]
   },
   resolve: {
@@ -32,7 +75,8 @@ module.exports = {
       // is a simple `export * from '@vue/runtime-dom`. However having this
       // extra re-export somehow causes webpack to always invalidate the module
       // on the first HMR update and causes the page to reload.
-      'vue': '@vue/runtime-dom',
+      // 'vue': '@vue/runtime-dom',
+      'vue': 'vue/dist/vue.esm-bundler.js',
       '@': process.cwd(),
     },
     extensions: ['.tsx', '.ts', '.js', '.vue']
