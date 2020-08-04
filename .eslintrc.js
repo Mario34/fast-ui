@@ -14,6 +14,15 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
+    '@typescript-eslint/no-unused-vars': [
+      1,
+      {
+        "vars": "all",
+        "args": "after-used",
+        "ignoreRestSiblings": false
+      }
+    ],
+
     // 试验性 🛠
     'react/react-in-jsx-scope': 0,
     'react/no-unknown-property': 0,
@@ -85,7 +94,7 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-tabs': 2,
     'no-mixed-spaces-and-tabs': 2,
-    'indent': [1, 2],  
+    'indent': [1, 2],
     'comma-dangle': [
       'error',
       {
@@ -128,7 +137,7 @@ module.exports = {
     'operator-linebreak': [
       2,
       'after',
-      { 'overrides': { '?': 'before', ':': 'before' }},
+      { 'overrides': { '?': 'before', ':': 'before' } },
     ],
     'space-before-blocks': [2, 'always'],
     'space-before-function-paren': [2, 'never'],
