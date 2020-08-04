@@ -59,18 +59,9 @@ module.exports = function(source) {
 
   output.push(content.slice(start));
 
-  console.log(`
-  <template>
-    <section class="content element-doc">
-      ${output.join('')}
-    </section>
-  </template>
-  ${pageScript}
-`)
-
   return `
     <template>
-      <section class="content element-doc">
+      <section class="content fast-ui-doc">
         ${output.join('')}
       </section>
     </template>

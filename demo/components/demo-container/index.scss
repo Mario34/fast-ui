@@ -1,0 +1,75 @@
+@import "@/demo/styles/variables.scss";
+
+.demo-container {
+  color: $__color_text1;
+  margin: 0 10px;
+  border: 1px solid $__color_line2;
+  overflow: hidden;
+
+  &__source {
+    padding: 18px;
+    border-bottom: 1px solid $__color_line2;
+  }
+
+  &__description {
+    padding: 18px 24px 12px;
+    border-bottom: 1px solid $__color_line2;
+    font-size: 14px;
+    color: $__color_text2;
+
+    p {
+      line-height: 26px;
+    }
+
+    code {
+      color: $__color_text3;
+      background-color: $__color_subsidiary_light8;
+      margin: 0 4px;
+      display: inline-block;
+      padding: 1px 5px;
+      font-size: 12px;
+      border-radius: 3px;
+      height: 18px;
+      line-height: 18px;
+    }
+  }
+
+  &__control {
+    line-height: 30px;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: $__color_subsidiary;
+    user-select: none;
+
+    &-button {
+      cursor: pointer;
+    }
+  }
+
+  &__highlight-box {
+    overflow: hidden;
+    transition: height 300ms ease;
+    height: 0;
+  }
+
+  &__highlight {
+    border-bottom: none;
+
+    code.hljs {
+      margin: 0;
+      border: none;
+      max-height: none;
+      border-radius: 0;
+      font-size: 14px;
+      line-height: 1.8;
+      font-family: Menlo, Monaco, Consolas, Courier, monospace;
+      padding: 16px 20px;
+      border-bottom: 1px solid $__color_line2;
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+}

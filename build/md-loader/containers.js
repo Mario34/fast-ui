@@ -10,12 +10,12 @@ module.exports = md => {
       if (tokens[idx].nesting === 1) {
         const description = m && m.length > 1 ? m[1] : '';
         const content = tokens[idx + 1].type === 'fence' ? tokens[idx + 1].content : '';
-        return `<demo-block>
+        return `<demo-container>
         ${description ? `<div>${md.render(description)}</div>` : ''}
         <!--md-demo: ${content}:md-demo-->
         `;
       }
-      return '</demo-block>';
+      return '</demo-container>';
     }
   });
 
