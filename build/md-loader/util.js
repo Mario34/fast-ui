@@ -1,3 +1,5 @@
+const { compileTemplate } = require('@vue/compiler-sfc');
+
 function stripScript(content) {
   const result = content.match(/<(script)>([\s\S]+)<\/\1>/);
   return result && result[2] ? result[2].trim() : '';
@@ -18,6 +20,7 @@ function stripTemplate(content) {
 }
 
 function genInlineComponentText(template, script) {
+  let compiled = ''
   script = script.trim();
   if (script) {
     script = script.replace(/export\s+default/, 'const democomponentExport =');
@@ -26,16 +29,26 @@ function genInlineComponentText(template, script) {
   }
 
   if (template) {
-    template = template.replace(/`/g,'\\`')
+    compiled = compileTemplate({
+      source: `<div>${template}</div>`,
+      filename: 'demo'
+    }).code
+
+    let moduleStr = compiled.match(/(?<=import {).*?(?=} from "vue")/)
+    if (moduleStr[0]) {
+      compiled = compiled
+        .replace(/(?<=import {).*?(?=} from "vue")/, moduleStr[0].replace(/ as/g, ':'))
+        .replace(/import/, 'const')
+        .replace(/from "vue"/, '= require("vue")')
+        .replace(/export /, '')
+    }
   }
 
-  console.log(template)
-
-  //TODO: template需要编译成render函数，需要相关编译方法
   let demoComponentContent = `(function() {
+    ${compiled}
     ${script}
     return defineComponent({
-      template: \`<div>${template}</div>\`,
+      render,
       ...democomponentExport
     })
   })()`;
