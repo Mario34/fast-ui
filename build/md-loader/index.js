@@ -61,7 +61,7 @@ module.exports = function(source) {
 
   return `
     <template>
-      <section class="content fast-ui-doc">
+      <section class="doc-content fast-ui-doc">
         ${output.join('')}
       </section>
     </template>

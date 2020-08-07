@@ -35,7 +35,7 @@ function genInlineComponentText(template, script) {
     }).code
 
     let moduleStr = compiled.match(/(?<=import {).*?(?=} from "vue")/)
-    if (moduleStr[0]) {
+    if (moduleStr && moduleStr[0]) {
       compiled = compiled
         .replace(/(?<=import {).*?(?=} from "vue")/, moduleStr[0].replace(/ as/g, ':'))
         .replace(/import/, 'const')
