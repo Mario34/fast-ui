@@ -34,6 +34,7 @@
     "demo/index.ts",
     "demo/**/*.png",
     "demo/**/*.json",
+    "demo/**/*.scss",
   ],
   "exclude": [
     "node_modules"
