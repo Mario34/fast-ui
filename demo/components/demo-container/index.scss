@@ -2,9 +2,9 @@
 
 .demo-container {
   color: $__color_text1;
-  margin: 0 10px;
   border: 1px solid $__color_line2;
   overflow: hidden;
+  max-width: 1000px;
 
   &__source {
     padding: 18px;
@@ -23,7 +23,7 @@
 
     code {
       color: $__color_text3;
-      background-color: $__color_subsidiary_light8;
+      background-color: $__color_second_light8;
       margin: 0 4px;
       display: inline-block;
       padding: 1px 5px;
@@ -39,7 +39,7 @@
     padding: 5px;
     font-size: 14px;
     text-align: center;
-    color: $__color_subsidiary;
+    color: $__color_second;
     user-select: none;
 
     &-button {
@@ -49,7 +49,7 @@
 
   &__highlight-box {
     overflow: hidden;
-    transition: height 300ms ease;
+    transition: height 160ms ease;
     height: 0;
   }
 

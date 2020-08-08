@@ -1,0 +1,47 @@
+/* Color */
+$__color_primary: #2f67ba !default;
+$__color_second: #74bbf1 !default;
+$__color_white: #fff !default;
+$__color_black: #000 !default;
+$__color_success: #67ac5b !default;
+$__color_warning: #ec9134 !default;
+$__color_danger: #ec5e58 !default;
+$__color_disable: #909399 !default;
+
+$__color_line1: #dcdfe6 !default;
+$__color_line2: #e4e7ed !default;
+$__color_line3: #ebeef5 !default;
+$__color_line4: #f2f6fc !default;
+
+$__color_text1: #212121 !default;
+$__color_text2: #424242 !default;
+$__color_text3: #616161 !default;
+$__color_text4: #757575 !default;
+
+$__color_text_light1: #f5f5f5 !default;
+$__color_text_light2: #eee !default;
+$__color_text_light3: #e0e0e0 !default;
+$__color_text_light4: #bdbdbd !default;
+
+$__color_primary_light2: mix($__color_white, $__color_primary, 20%) !default;
+$__color_primary_light4: mix($__color_white, $__color_primary, 40%) !default;
+$__color_primary_light6: mix($__color_white, $__color_primary, 60%) !default;
+$__color_primary_light8: mix($__color_white, $__color_primary, 80%) !default;
+
+$__color_second_light2: mix($__color_white, $__color_second, 20%) !default;
+$__color_second_light4: mix($__color_white, $__color_second, 40%) !default;
+$__color_second_light6: mix($__color_white, $__color_second, 60%) !default;
+$__color_second_light8: mix($__color_white, $__color_second, 80%) !default;
+
+// 导出样式变量到js环境
+// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
+/* stylelint-disable */
+:export {
+  __color_primary: $__color_primary;
+  __color_white: $__color_white;
+  __color_black: $__color_black;
+  __color_success: $__color_success;
+  __color_warning: $__color_warning;
+  __color_danger: $__color_danger;
+  __color_disable: $__color_disable;
+}

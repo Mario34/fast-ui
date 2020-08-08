@@ -8287,6 +8287,11 @@ vue-loader@^16.0.0-beta.4:
     merge-source-map "^1.1.0"
     source-map "^0.6.1"
 
+vue-router@^4.0.0-beta.6:
+  version "4.0.0-beta.6"
+  resolved "https://registry.npm.taobao.org/vue-router/download/vue-router-4.0.0-beta.6.tgz?cache=0&sync_timestamp=1596701917126&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvue-router%2Fdownload%2Fvue-router-4.0.0-beta.6.tgz#7ddf4c00d1bee778fb8945f5e8ccb931b5885543"
+  integrity sha1-fd9MANG+53j7iUX16My5MbWIVUM=
+
 vue-template-compiler@^2.6.11:
   version "2.6.11"
   resolved "https://registry.npm.taobao.org/vue-template-compiler/download/vue-template-compiler-2.6.11.tgz#c04704ef8f498b153130018993e56309d4698080"

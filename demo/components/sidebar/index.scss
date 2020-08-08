@@ -1,0 +1,52 @@
+@import "@/demo/styles/variables.scss";
+
+.sidebar {
+  flex-shrink: 0;
+  width: 220px;
+  box-sizing: border-box;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+  border-right: 1px solid $__color_line2;
+  padding-bottom: 60px;
+
+  &__group {
+    padding: 10px 0;
+
+    &-title {
+      padding: 20px 20px;
+      font-size: 16px;
+      font-weight: 500;
+      color: $__color_text2;
+      border-bottom: 1px solid $__color_line4;
+      margin-bottom: 10px;
+    }
+
+    &-item {
+      padding: 10px 20px;
+      font-size: 14px;
+      color: $__color_text3;
+      transition: all 0.2s;
+      margin-bottom: 8px;
+      line-height: 24px;
+      text-transform: capitalize;
+
+      &:hover {
+        cursor: pointer;
+        color: $__color_second;
+      }
+
+      &--active {
+        color: $__color_second;
+        background-color: #f9f9f9;
+      }
+    }
+  }
+
+  &__footer {
+    position: absolute;
+    bottom: 0;
+    width: 219px;
+    background-color: #fff;
+    border-top: 1px solid $__color_line3;
+  }
+}

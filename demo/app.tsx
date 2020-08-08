@@ -1,18 +1,9 @@
-import { defineComponent, ref } from 'vue'
-import Button from '@/packages/button'
+import { defineComponent } from 'vue';
 
-export default defineComponent(() => {
-  const count = ref(0);
+const App = defineComponent({
+  render() {
+    return <router-view class='view' />;
+  },
+});
 
-  const inc = () => {
-    count.value++;
-  };
-
-  return () => (
-    <div>
-      This is first Component. Let's go!
-      <br></br>
-      <Button />
-    </div>
-  );
-})
+export default App;

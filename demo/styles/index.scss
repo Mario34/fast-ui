@@ -1,0 +1,62 @@
+@import "./reset.scss";
+@import "./variables.scss";
+
+body {
+  color: $__color_text1;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Helvetica Neue",
+    Helvetica,
+    Segoe UI,
+    Arial,
+    Roboto,
+    "PingFang SC",
+    "Hiragino Sans GB",
+    "Microsoft Yahei",
+    sans-serif;
+}
+
+// 统一滚动条样式
+.__scroll-box {
+
+  $--scrollbar-thumb-background: #ccc;
+  $--scrollbar-track-background: #fff;
+
+  &::-webkit-scrollbar {
+    z-index: 11;
+    width: 6px;
+
+    &:horizontal {
+      height: 6px;
+    }
+
+    &-thumb {
+      border-radius: 5px;
+      width: 6px;
+      background: $--scrollbar-thumb-background;
+    }
+
+    &-corner {
+      background: $--scrollbar-track-background;
+    }
+
+    &-track {
+      background: $--scrollbar-track-background;
+
+      &-piece {
+        background: $--scrollbar-track-background;
+        width: 6px;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $__color_text3;
+
+  &:hover {
+    color: $__color_second;
+  }
+}
