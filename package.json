@@ -35,7 +35,7 @@
   "bugs": {
     "url": "https://github.com/Mario34/fast/issues"
   },
-  "homepage": "https://github.com/Mario34/fast#readme",
+  "homepage": "https://github.com/Mario34/fast-ui#readme",
   "devDependencies": {
     "@ant-design-vue/babel-plugin-jsx": "^1.0.0-beta.4",
     "@babel/core": "^7.10.5",
@@ -97,6 +97,7 @@
   "dependencies": {
     "highlight.js": "^10.1.2",
     "normalize.css": "^8.0.1",
-    "vue": "^3.0.0-rc.5"
+    "vue": "^3.0.0-rc.5",
+    "vue-router": "^4.0.0-beta.6"
   }
 }

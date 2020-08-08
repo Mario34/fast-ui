@@ -1,0 +1,67 @@
+@import "@/demo/styles/variables.scss";
+
+.header {
+  border-bottom: 1px solid $__color_line2;
+
+  &__container {
+    height: 59px;
+    margin: 0 auto;
+    padding: 0 30px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__fast-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 190px;
+
+    img {
+      height: 50px;
+    }
+
+    &-text {
+      font-size: 26px;
+      margin-left: 12px;
+      font-weight: 500;
+      color: $__color_second;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    padding: 0 20px;
+    height: 100%;
+
+    li {
+      margin-right: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      color: $__color_text3;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $__color_second;
+      }
+    }
+  }
+
+  &__memu {
+    font-size: 14px;
+    cursor: pointer;
+
+    .github-logo {
+      height: 20px;
+      margin-right: 6px;
+    }
+
+    &-item {
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

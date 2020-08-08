@@ -1,0 +1,12 @@
+@import "../styles/variables.scss";
+
+.fa-button {
+  outline: none;
+  box-shadow: none;
+  border: none;
+  height: 40px;
+  padding: 0 12px;
+  border-radius: $__radius_2;
+  font-weight: bold;
+  font-size: 14px;
+}

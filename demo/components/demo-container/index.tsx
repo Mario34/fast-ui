@@ -3,38 +3,39 @@ import hljs from 'highlight.js';
 import './atom-one-light.css';
 import './index.scss';
 
-const DemoContainer = defineComponent((_props, ctx) => {
-  const {
-    slots: {
-      default: _default,
-      source,
-      highlight,
-    },
-  } = ctx;
-  const descriptionRef = ref();
-  const highlightRef = ref();
-  const isExpanded = ref(false);
-  const highlightHeight = computed(() => {
-    if (isExpanded.value) {
-      return highlightRef.value ? highlightRef.value.offsetHeight : 0;
-    }
-    return 0;
-  });
-  const controlText = computed(() => isExpanded.value ? '隐藏代码' : '显示代码');
-
-  const switchExpand = () => {
-    isExpanded.value = !isExpanded.value;
-  };
-
-  onMounted(() => {
-    nextTick(() => {
-      const blocks = document.querySelectorAll('pre code:not(.hljs)');
-      Array.prototype.forEach.call(blocks, hljs.highlightBlock);
+const DemoContainer = defineComponent({
+  props: [],
+  setup(_props, ctx) {
+    const {
+      slots: {
+        default: _default,
+        source,
+        highlight,
+      },
+    } = ctx;
+    const descriptionRef = ref();
+    const highlightRef = ref();
+    const isExpanded = ref(false);
+    const highlightHeight = computed(() => {
+      if (isExpanded.value) {
+        return highlightRef.value ? highlightRef.value.offsetHeight : 0;
+      }
+      return 0;
     });
-  });
+    const controlText = computed(() => isExpanded.value ? '隐藏代码' : '显示代码');
 
-  return () => {
-    return (
+    const switchExpand = () => {
+      isExpanded.value = !isExpanded.value;
+    };
+
+    onMounted(() => {
+      nextTick(() => {
+        const blocks = document.querySelectorAll('pre code:not(.hljs)');
+        Array.prototype.forEach.call(blocks, hljs.highlightBlock);
+      });
+    });
+
+    return () => (
       <div class='demo-container'>
         {source && (
           <div class='demo-container__source'>
@@ -76,7 +77,7 @@ const DemoContainer = defineComponent((_props, ctx) => {
         </div >
       </div >
     );
-  };
+  },
 });
 
 export default DemoContainer;

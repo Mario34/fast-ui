@@ -27,15 +27,8 @@
     ]
   },
   "include": [
-    "demo/**/*.ts",
-    "demo/**/*.tsx",
-    "demo/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx",
-    "demo/index.ts",
-    "demo/**/*.png",
-    "demo/**/*.json",
-    "demo/**/*.scss",
+    "demo/**/*",
+    "packages/**/*",
   ],
   "exclude": [
     "node_modules"

@@ -10,7 +10,8 @@ module.exports = {
     path: utils.resolve('dist'),
     filename: '[name].js',
     chunkFilename: '[chunkhash].js',
-    jsonpFunction: 'myWebpackJsonp'
+    jsonpFunction: 'myWebpackJsonp',
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -52,6 +53,17 @@ module.exports = {
         ]
       },
       {
+        test: /\.(ttf|woff)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: utils.staticPath('fonts/[name][hash].[ext]'),
+            }
+          }
+        ]
+      },
+      {
         test: /\.md$/,
         use: [
           {
@@ -75,8 +87,7 @@ module.exports = {
       // is a simple `export * from '@vue/runtime-dom`. However having this
       // extra re-export somehow causes webpack to always invalidate the module
       // on the first HMR update and causes the page to reload.
-      // 'vue': '@vue/runtime-dom',
-      'vue': 'vue/dist/vue.esm-bundler.js',
+      'vue': '@vue/runtime-dom',
       '@': process.cwd(),
     },
     extensions: ['.tsx', '.ts', '.js', '.vue']
