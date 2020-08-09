@@ -3,7 +3,7 @@ import './index.scss';
 
 const Footer = defineComponent({
   setup() {
-    return (
+    return () => (
       <footer class='footer'>
         <div class='footer__container'>
           <div class='footer__tips'>

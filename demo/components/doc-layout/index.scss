@@ -16,38 +16,13 @@
 
     &-doc {
       flex: 1;
+      position: relative;
     }
   }
 
   &__catalogue {
     width: 200px;
     height: 100%;
-
-    .doc-toc {
-      position: fixed;
-      top: 100px;
-      width: 200px;
-
-      &__list {
-        padding: 12px 10px;
-      }
-
-      &__item {
-        padding: 12px 0;
-      }
-
-      &__link {
-        color: $__color_text3;
-        text-decoration: none;
-        line-height: 20px;
-        font-size: 12px;
-
-        &:hover {
-          color: $__color_second;
-          cursor: pointer;
-        }
-      }
-    }
   }
 }
 
@@ -56,7 +31,30 @@
   border-right: 1px solid $__color_line2;
 
   .doc-toc {
-    display: none;
+    position: fixed;
+    right: 0;
+    top: 100px;
+    width: 200px;
+
+    &__list {
+      padding: 12px 10px;
+    }
+
+    &__item {
+      padding: 12px 0;
+    }
+
+    &__link {
+      color: $__color_text3;
+      text-decoration: none;
+      line-height: 20px;
+      font-size: 12px;
+
+      &:hover {
+        color: $__color_second;
+        cursor: pointer;
+      }
+    }
   }
 
   h2 {

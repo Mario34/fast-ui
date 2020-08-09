@@ -1,4 +1,4 @@
-import { ref, onMounted, onUpdated, nextTick } from 'vue';
+import { ref, toRefs } from 'vue';
 import { RouterView } from 'vue-router';
 import Header from '@/demo/components/header';
 import Sidebar, { SidebarConfigItem } from '@/demo/components/sidebar';
@@ -13,23 +13,7 @@ const DocLayout = ({
   setup(props: Readonly<{ navConfig: SidebarConfigItem[] }>) {
     const catalogue = ref();
     const scrollBox = ref();
-    const { navConfig } = props;
-    onMounted(() => {
-      const tocEl = document.getElementsByClassName('doc-toc')[0];
-      if (tocEl) {
-        catalogue.value.appendChild(tocEl);
-      }
-    });
-    onUpdated(() => {
-      scrollBox.value.scrollTop = 0;
-      nextTick(() => {
-        const tocEl = document.getElementsByClassName('doc-toc')[0];
-        catalogue.value.innerHTML = '';
-        if (tocEl) {
-          catalogue.value.appendChild(tocEl);
-        }
-      });
-    });
+    const { navConfig } = toRefs(props);
 
     return () => (
       <div class='doc-page'>

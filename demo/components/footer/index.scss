@@ -1,6 +1,10 @@
+@import "@/demo/styles/variables.scss";
+
 .footer {
+  border-top: 1px solid $__color_line3;
+
   &__container {
-    height: 60px;
+    height: 59px;
     display: flex;
     justify-content: center;
     align-items: center;

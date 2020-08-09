@@ -1,25 +1,31 @@
 import fastLogo from '@/demo/images/fast-logo.png';
 import githubLogo from '@/demo/images/github.png';
-import './index.scss';
 import packageJson from '@/package.json';
+import { RouterLink } from 'vue-router';
+import './index.scss';
 
 const Header = () => {
   return (
     <header class='header'>
       <div class='header__container'>
-        <div class='header__fast-logo'>
-          <img
-            alt='logo'
-            src={fastLogo}
-          />
-          <span class='header__fast-logo-text'>
-            FAST UI
-          </span>
-        </div>
+        <RouterLink to='/'>
+          <div class='header__fast-logo'>
+            <img
+              alt='logo'
+              src={fastLogo}
+            />
+            <span class='header__fast-logo-text'>
+              FAST UI
+            </span>
+          </div>
+        </RouterLink>
         <nav class='header__nav'>
-          <li>指南</li>
-          <li>组件</li>
-          <li>关于</li>
+          <RouterLink to='/guide'>
+            <li>指南</li>
+          </RouterLink>
+          <RouterLink to='/components'>
+            <li>组件</li>
+          </RouterLink>
         </nav>
         <div class='header__memu'>
           <a
