@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import generateGroups from '@/demo/utils/group';
+import { generateComponentsGroups, generateGuideGroups } from '@/demo/utils/group';
 /**
  * 路由加载规则
  * docs/*.md 作为组件的文档 /components
@@ -43,10 +43,14 @@ const router = createRouter({
   history: createWebHistory('/'),
   routes: [
     {
+      path: '/',
+      component: () => import('@/demo/pages/home'),
+    },
+    {
       path: '/components',
       component: () => import('@/demo/components/doc-layout'),
       props: {
-        navConfig: generateGroups(componentsRoutes),
+        navConfig: generateComponentsGroups(componentsRoutes),
       },
       children: [
         ...componentsRoutes,
@@ -56,11 +60,15 @@ const router = createRouter({
       path: '/guide',
       component: () => import('@/demo/components/doc-layout'),
       props: {
-        navConfig: generateGroups(guideRoutes),
+        navConfig: generateGuideGroups(guideRoutes),
       },
       children: [
         ...guideRoutes,
       ],
+    },
+    {
+      path: '/:data(.*)',
+      redirect: '/',
     },
   ],
 });
