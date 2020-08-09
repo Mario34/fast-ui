@@ -42,23 +42,18 @@ const Sidebar = defineComponent({
                 )}
                 {
                   group.items.map((item) => (
-                    <RouterLink
-                      custom
+                    <div
+                      class={{
+                        'sidebar__group-item': true,
+                        'sidebar__group-item--active': item.name === route.name,
+                      }}
                       key={item.title}
-                      to={{ name: item.name }}
+                      onClick={() => {
+                        router.push({ name: item.name });
+                      }}
                     >
-                      <div
-                        class={{
-                          'sidebar__group-item': true,
-                          'sidebar__group-item--active': item.name === route.name,
-                        }}
-                        onClick={() => {
-                          router.push({ name: item.name });
-                        }}
-                      >
-                        {item.title}
-                      </div>
-                    </RouterLink>
+                      {item.title}
+                    </div>
                   ))
                 }
               </>

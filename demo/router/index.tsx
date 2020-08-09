@@ -1,10 +1,11 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import { generateComponentsGroups, generateGuideGroups } from '@/demo/utils/group';
+
 /**
  * 路由加载规则
  * docs/*.md 作为组件的文档 /components
  * docs/guide/*.md 作为指南文档 /guide
- * pages/**.tsx 作为普通页面
+ * demo/pages/**.tsx 作为普通页面
 */
 
 /**
@@ -19,14 +20,14 @@ function loadDocs() {
       const name = (key.match(/(?<=guide\/).*?(?=\.md)/) || [])[0];
       guideRoutes.push({
         name: name,
-        path: name,
+        path: `/${name}`,
         component: () => import(`@/docs/${key.slice(2)}`),
       });
     } else {
       const name = (key.match(/(?<=\.\/).*?(?=\.md)/) || [])[0];
       componentsRoutes.push({
         name: name,
-        path: name,
+        path: `/${name}`,
         component: () => import(`@/docs/${key.slice(2)}`),
       });
     }
@@ -53,6 +54,10 @@ const router = createRouter({
         navConfig: generateComponentsGroups(componentsRoutes),
       },
       children: [
+        {
+          path: '',
+          redirect: '/layout',
+        },
         ...componentsRoutes,
       ],
     },
@@ -63,6 +68,10 @@ const router = createRouter({
         navConfig: generateGuideGroups(guideRoutes),
       },
       children: [
+        {
+          path: '',
+          redirect: '/introduce',
+        },
         ...guideRoutes,
       ],
     },

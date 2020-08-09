@@ -9,8 +9,8 @@ export const COMPONENTS_GROUP: GroupRule[] = [
     groups: 'basic',
     title: '基础组件',
     items: [
-      ['button', '按钮'],
       ['layout', '布局'],
+      ['button', '按钮'],
     ],
   },
 ];

@@ -36,14 +36,19 @@
     padding: 0 20px;
     height: 100%;
 
-    li {
+    & > a {
+      color: $__color_text3;
       margin-right: 20px;
       cursor: pointer;
       font-size: 14px;
-      color: $__color_text3;
       transition: all 0.2s;
+      font-weight: bold;
 
       &:hover {
+        color: $__color_second;
+      }
+
+      &.router-link-active {
         color: $__color_second;
       }
     }
