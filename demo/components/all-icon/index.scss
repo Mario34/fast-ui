@@ -1,0 +1,36 @@
+@import "@/demo/styles/variables.scss";
+
+.all-icon {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    height: 100px;
+    border: 1px solid $__color_line3;
+    border-radius: 4px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 5px;
+
+    i {
+      font-size: 36px;
+      color: $__color_text3;
+    }
+
+    span {
+      font-size: 12px;
+      color: $__color_text4;
+      text-align: center;
+      line-height: 14px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

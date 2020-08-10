@@ -7724,6 +7724,11 @@ table@^5.2.3, table@^5.4.6:
     slice-ansi "^2.1.0"
     string-width "^3.0.0"
 
+tabler-icons@^1.11.0:
+  version "1.11.0"
+  resolved "https://registry.npm.taobao.org/tabler-icons/download/tabler-icons-1.11.0.tgz#f221b8df296278e533fe6578e873c0008b77425d"
+  integrity sha1-8iG43ylieOUz/mV46HPAAIt3Ql0=
+
 tapable@^0.1.8:
   version "0.1.10"
   resolved "https://registry.npm.taobao.org/tapable/download/tapable-0.1.10.tgz#29c35707c2b70e50d07482b5d202e8ed446dafd4"
