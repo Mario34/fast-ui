@@ -10,6 +10,7 @@ export const COMPONENTS_GROUP: GroupRule[] = [
     title: '基础组件',
     items: [
       ['layout', '布局'],
+      ['icon', '图标'],
       ['button', '按钮'],
     ],
   },
