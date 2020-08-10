@@ -17,7 +17,6 @@
     &-doc {
       flex: 1;
       position: relative;
-      border-right: 1px solid $__color_line2;
     }
   }
 
@@ -28,7 +27,10 @@
 }
 
 .doc-content {
-  padding: 50px 30px 40px;
+  padding: 50px 50px 40px;
+  border-right: 1px solid $__color_line2;
+  min-height: calc(100vh - 60px);
+  box-sizing: border-box;
 
   .doc-toc {
     position: fixed;
