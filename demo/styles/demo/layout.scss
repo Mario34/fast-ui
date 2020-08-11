@@ -1,38 +1,18 @@
 @import "@/demo/styles/variables.scss";
 
 .demo-layout {
-  &.fa-row {
-    margin-bottom: 12px;
-  }
-
   .fa-col {
     line-height: 40px;
     background-color: #f0f0f0;
     text-align: center;
     color: $__color_text4;
 
-    &:nth-child(1) {
-      background-color: $__color_second_light8;
+    &:nth-child(2n) {
+      background-color: #efefef;
     }
 
-    &:nth-child(2) {
-      background-color: $__color_second_light6;
-    }
-
-    &:nth-child(3) {
-      background-color: $__color_primary_light6;
-    }
-
-    &:nth-child(4) {
-      background-color: $__color_primary_light8;
-    }
-
-    &:nth-child(5) {
-      background-color: $__color_second_light2;
-    }
-
-    &:nth-child(6) {
-      background-color: $__color_second_light4;
+    &:nth-child(2n + 1) {
+      background-color: #eff6fc;
     }
   }
 }
