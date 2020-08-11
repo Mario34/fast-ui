@@ -136,9 +136,15 @@
       font-size: 14px;
       margin-bottom: 45px;
       line-height: 1.5em;
+      border: 1px solid $__color_line3;
 
       strong {
         font-weight: normal;
+      }
+
+      thead {
+        background-color: #f9f9f9;
+        border-top: #f0f0f0;
       }
 
       td,

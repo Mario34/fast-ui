@@ -1,0 +1,15 @@
+.fa-row {
+  position: relative;
+  box-sizing: border-box;
+
+  &::before {
+    display: table;
+    content: "";
+  }
+
+  &::after {
+    display: table;
+    content: "";
+    clear: both;
+  }
+}
