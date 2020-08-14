@@ -4,6 +4,7 @@ module.exports = {
   transform: {
     '^.+\\.(ts|tsx)?$': 'ts-jest',
     '^.+\\.(js|jsx)$': 'babel-jest',
+    '.*\\.(vue)$': 'vue-jest',
   },
   testRegex: '(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
@@ -12,4 +13,6 @@ module.exports = {
     '\\.(gif|ttf|eot|svg)$': '<rootDir>/__mocks__/fileMock.js',
     '@/(.*)$': '<rootDir>/$1',
   },
+  collectCoverage: true,
+  collectCoverageFrom: ['packages/*.{js,ts,tsx}', '!**/node_modules/**'],
 };
