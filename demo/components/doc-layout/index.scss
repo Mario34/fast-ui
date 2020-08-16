@@ -21,22 +21,27 @@
   }
 
   &__catalogue {
-    width: 200px;
+    width: 170px;
     height: 100%;
   }
 }
 
 .doc-content {
-  padding: 50px 50px 40px;
-  border-right: 1px solid $__color_line2;
+  padding: 50px 20px 40px;
   min-height: calc(100vh - 60px);
   box-sizing: border-box;
+  width: 1000px;
+  margin: 0 auto;
 
   .doc-toc {
     position: fixed;
     right: 0;
-    top: 100px;
-    width: 200px;
+    top: 80px;
+    width: 150px;
+    border: 1px solid $__color_line2;
+    max-height: calc(100vh - 140px);
+    overflow: auto;
+    margin-right: 20px;
 
     &__list {
       padding: 12px 10px;
