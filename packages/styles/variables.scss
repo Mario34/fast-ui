@@ -23,6 +23,7 @@ $__color_text_light2: #eee !default;
 $__color_text_light3: #e0e0e0 !default;
 $__color_text_light4: #bdbdbd !default;
 
+$__color_primary_light1: mix($__color_white, $__color_primary, 10%) !default;
 $__color_primary_light2: mix($__color_white, $__color_primary, 20%) !default;
 $__color_primary_light4: mix($__color_white, $__color_primary, 40%) !default;
 $__color_primary_light6: mix($__color_white, $__color_primary, 60%) !default;
