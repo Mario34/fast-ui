@@ -1,0 +1,31 @@
+/**
+ * 单行文本省略
+ */
+@mixin single-overflow($width) {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: $width;
+}
+
+/**
+ * 多行文本省略
+ */
+@mixin multiline-overflow($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+/**
+ * 多行文本省略
+ */
+@mixin multiline-overflow($line) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}

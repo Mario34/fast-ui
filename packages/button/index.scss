@@ -1,12 +1,150 @@
 @import "../styles/variables.scss";
+@import "../styles/mixins.scss";
 
 .fa-button {
   outline: none;
   box-shadow: none;
-  border: none;
   height: 40px;
   padding: 0 12px;
   border-radius: $__radius_2;
   font-weight: bold;
   font-size: 14px;
+  color: $__color_text4;
+  background-color: $__color_white;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  box-sizing: border-box;
+  border: 1px solid mix($__color_text4, #f5f5f5, 10%);
+  display: inline-block;
+  line-height: 1;
+
+  & [class^="ti-"] {
+    vertical-align: -0.125em;
+  }
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  &:hover {
+    background-color: mix($__color_white, $__color_primary, 96%);
+  }
+
+  &:active {
+    background-color: mix($__color_black, $__color_white, 4%);
+  }
+
+  &.--loading,
+  &.--disabled {
+    color: $__color_text_light4;
+    background-color: $__color_text_light2;
+
+    .fa-button__loading {
+      vertical-align: -0.125em;
+      height: 1em;
+      width: 1em;
+      display: inline-block;
+      box-sizing: border-box;
+      border-radius: 0.5em;
+      border-right: 2px solid $__color_text_light1;
+      border-bottom: 2px solid $__color_text_light1;
+      border-top: 2px solid $__color_text_light1;
+      border-left: 2px solid transparent;
+      animation: rotate 0.6s infinite linear;
+    }
+  }
+
+  @mixin type-color($color, $type) {
+    &.--#{$type} {
+      color: $__color_white;
+      background-color: $color;
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: mix($__color_white, $color, 10%);
+      }
+
+      &:active {
+        background-color: mix($__color_black, $color, 4%);
+      }
+
+      &.--disabled,
+      &.--loading {
+        background-color: mix($__color_white, $color, 50%);
+        color: $__color_text_light1;
+
+        .fa-button__loading {
+          border-color: $__color_text_light1 $__color_text_light1
+            $__color_text_light1 transparent;
+        }
+      }
+
+      &.--plain {
+        background-color: #fff;
+        border: 1px solid mix($__color_white, $color, 40%);
+        color: mix($__color_white, $color, 10%);
+
+        &:hover {
+          background-color: mix($__color_white, $color, 90%);
+        }
+
+        &:active {
+          background-color: mix($__color_white, $color, 86%);
+        }
+
+        &.--disabled,
+        &.--loading {
+          background-color: #fff;
+          border: 1px solid mix($__color_white, $color, 80%);
+          color: mix($__color_white, $color, 40%);
+
+          .fa-button__loading {
+            border-color: mix($__color_white, $color, 40%)
+              mix($__color_white, $color, 40%) mix($__color_white, $color, 40%)
+              transparent;
+          }
+        }
+      }
+    }
+  }
+
+  @mixin size($size, $font-size, $height, $padding) {
+    &.--#{$size} {
+      font-size: $font-size;
+      height: $height;
+      padding: $padding;
+
+      &.--circle {
+        width: $height;
+        border-radius: 50%;
+        padding: 0;
+
+        @include single-overflow(auto);
+      }
+
+      &.--round {
+        border-radius: #{$height/2};
+      }
+    }
+  }
+
+  @include type-color($__color_primary, primary);
+  @include type-color($__color_second, second);
+  @include type-color($__color_success, success);
+  @include type-color($__color_warning, warning);
+  @include type-color($__color_danger, danger);
+
+  @include size(small, 12px, 32px, 0 14px);
+  @include size(medium, 14px, 40px, 0 18px);
+  @include size(large, 16px, 46px, 0 22px);
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0);
+    }
+
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
