@@ -1,0 +1,24 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.fa-button-group {
+  position: relative;
+  box-sizing: border-box;
+
+  .fa-button {
+    border-radius: 0;
+    border-right: 1px solid red;
+    
+    &:first-child {
+      border-radius: $__radius_2 0 0 $__radius_2;
+    }
+
+    &:last-child {
+      border-radius: 0 $__radius_2 $__radius_2 0;
+    }
+
+    & + .fa-button {
+      margin-left: 1px;
+    }
+  }
+}

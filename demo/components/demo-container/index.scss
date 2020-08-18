@@ -16,22 +16,6 @@
     border-bottom: 1px solid $__color_line2;
     font-size: 14px;
     color: $__color_text2;
-
-    p {
-      line-height: 26px;
-    }
-
-    code {
-      color: $__color_text3;
-      background-color: $__color_second_light8;
-      margin: 0 4px;
-      display: inline-block;
-      padding: 1px 5px;
-      font-size: 12px;
-      border-radius: 3px;
-      height: 18px;
-      line-height: 18px;
-    }
   }
 
   &__control {

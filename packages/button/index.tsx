@@ -61,11 +61,11 @@ const Button = defineComponent({
       slots: {
         default: _default,
       },
+      attrs,
     } = ctx;
     const {
       loading,
       disabled,
-      className,
       style,
       type,
       size,
@@ -75,14 +75,10 @@ const Button = defineComponent({
       circle,
     } = props as ButtonProps;
 
-    const onClick = (e: Event) => {
-      !disabled && !loading && ctx.emit('click', e);
-    };
-
     return () => (
       <button
+        {...attrs}
         class={{
-          [className]: !!className,
           'fa-button': true,
           [`--${type}`]: true,
           [`--${size}`]: true,
@@ -92,8 +88,8 @@ const Button = defineComponent({
           [`--disabled`]: disabled,
           [`--loading`]: loading,
         }}
+        disabled={disabled}
         style={style}
-        onClick={onClick}
       >
         {loading && <i class='fa-button__loading' />}
         {icon && <i class={icon} />}

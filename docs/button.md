@@ -89,11 +89,91 @@
 :::demo 使用`size`来控制按钮的类型 `'small'|'medium'|'large'`，默认值为`medium`
 
 ```html
-<fa-row :space="14">
-  <fa-button size="small">小按钮</fa-button>
-  <fa-button size="medium">默认按钮</fa-button>
-  <fa-button size="large">大按钮</fa-button>
-</fa-row>
+<fa-button size="small">小按钮</fa-button>
+<fa-button size="medium">默认按钮</fa-button>
+<fa-button size="large">大按钮</fa-button>
 ```
 
 :::
+
+### 带图标按钮
+
+:::demo 使用`icon`给按钮添加图标，同时也可以直接在 button 内部添加`<i class="icon-class"></i>`实现
+
+```html
+<fa-button round icon="ti-thumb-up">赞</fa-button>
+<fa-button circle icon="ti-thumb-up" type="success"></fa-button>
+<fa-button round type="danger"><i class="ti-ball-basketball"></i>23</fa-button>
+<fa-button round type="warning"> 24 <i class="ti-ball-basketball"></i></fa-button>
+<fa-button round icon="ti-star" type="primary">收藏</fa-button>
+```
+
+:::
+
+### 文字按钮
+
+:::demo 文字按钮一般适用于非重要性操作
+
+```html
+<fa-button type="text">取消</fa-button>
+<fa-button type="text">下一页</fa-button>
+<fa-button type="text">查看详情</fa-button>
+```
+
+:::
+
+### 按钮组
+
+:::demo 使用`button-group`包裹多个`button`实现按钮组
+
+```html
+<fa-row :space="14">
+  <fa-button-group>
+    <fa-button type="second">按钮1</fa-button>
+    <fa-button type="second">按钮2</fa-button>
+    <fa-button type="second">按钮3</fa-button>
+    <fa-button type="second">按钮4</fa-button>
+    <fa-button type="second">按钮5</fa-button>
+  </fa-button-group>
+</fa-row>
+<fa-row :space="14">
+  <fa-button-group>
+    <fa-button type="second">按钮1</fa-button>
+    <fa-button type="success">按钮2</fa-button>
+    <fa-button type="primary">按钮3</fa-button>
+    <fa-button type="warning">按钮4</fa-button>
+    <fa-button type="danger">按钮5</fa-button>
+  </fa-button-group>
+</fa-row>
+
+<script>
+  export default {
+    methods: {
+      onKeyUp(e) {
+        console.log(e);
+      },
+    },
+  };
+</script>
+```
+
+:::
+
+### Props
+
+| 参数     | 说明     | 类型                                                             | 默认值    |
+| -------- | -------- | ---------------------------------------------------------------- | --------- |
+| type     | 颜色类型 | `default` `primary` `second` `success` `danger` `warning` `text` | `default` |
+| plain    | 朴素风格 | boolean                                                          | `false`   |
+| round    | 圆角按钮 | boolean                                                          | `false`   |
+| circle   | 圆形按钮 | boolean                                                          | `false`   |
+| icon     | 按钮图标 | string                                                           | -         |
+| disabled | 禁用状态 | boolean                                                          | `false`   |
+| loading  | 加载状态 | boolean                                                          | `false`   |
+
+### Event
+
+| 参数  | 说明         | 参数    |
+| ----- | ------------ | ------- |
+| click | 点击事件     | `Event` |
+| ...   | 其他原生事件 | `Event` |
