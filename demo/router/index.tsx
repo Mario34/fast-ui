@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router';
 import { generateComponentsGroups, generateGuideGroups } from '@/demo/utils/group';
 
 const devMode = process.env.NODE_ENV === 'development';
@@ -43,7 +43,7 @@ function loadDocs() {
 const { guideRoutes, componentsRoutes } = loadDocs();
 
 const router = createRouter({
-  history: createWebHistory(devMode ? '/' : '/fast-ui'),
+  history: createWebHashHistory(devMode ? '/' : '/fast-ui'),
   routes: [
     {
       path: '/',
