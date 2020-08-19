@@ -43,7 +43,7 @@ function loadDocs() {
 const { guideRoutes, componentsRoutes } = loadDocs();
 
 const router = createRouter({
-  history: createWebHashHistory(devMode ? '/' : '/fast-ui'),
+  history: createWebHashHistory(devMode ? '/' : '/fast-ui/'),
   routes: [
     {
       path: '/',
