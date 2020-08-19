@@ -10,7 +10,8 @@ module.exports = merge(common, {
   output: {
     path: utils.resolve('dist'),
     filename: utils.staticPath('js/[name].[chunkhash].js'),
-    chunkFilename: utils.staticPath('js/[id].[chunkhash].js')
+    chunkFilename: utils.staticPath('js/[id].[chunkhash].js'),
+    publicPath: '/fast-ui',
   },
   plugins: [
     new webpack.DefinePlugin({
