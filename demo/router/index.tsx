@@ -47,6 +47,10 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      redirect: '/home',
+    },
+    {
+      path: '/home',
       component: () => import('@/demo/pages/home'),
     },
     {
@@ -79,7 +83,7 @@ const router = createRouter({
     },
     {
       path: '/:data(.*)',
-      redirect: '/',
+      redirect: '/home',
     },
   ],
 });
