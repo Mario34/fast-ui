@@ -11,7 +11,7 @@ module.exports = merge(common, {
     filename: utils.staticPath('js/[name].[chunkhash].js'),
     chunkFilename: utils.staticPath('js/[id].[chunkhash].js'),
     jsonpFunction: 'myWebpackJsonp',
-    publicPath: '/fast-ui/',
+    publicPath: './',
   },
   plugins: [
     new webpack.DefinePlugin({
