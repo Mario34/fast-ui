@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import { generateComponentsGroups, generateGuideGroups } from '@/demo/utils/group';
 
+const devMode = process.env.NODE_ENV === 'development';
+
 /**
  * 路由加载规则
  * docs/*.md 作为组件的文档 /components
@@ -41,7 +43,7 @@ function loadDocs() {
 const { guideRoutes, componentsRoutes } = loadDocs();
 
 const router = createRouter({
-  history: createWebHistory('/'),
+  history: createWebHistory(devMode ? '/' : '/fast-ui'),
   routes: [
     {
       path: '/',
