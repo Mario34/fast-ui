@@ -12,3 +12,4 @@ coverage
 .eslintrc*
 build/
 bin/
+./dist

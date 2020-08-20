@@ -19,17 +19,17 @@ function loadDocs() {
   const docs = require.context('@/docs/', true, /\.md$/);
   docs.keys().forEach(key => {
     if (key.match(/guide\/.+\.md$/)) {
-      const name = (key.match(/(?<=guide\/).*?(?=\.md)/) || [])[0];
+      const match = key.match(/^\.\/guide\/(\S*)\.md$/) as string[];
       guideRoutes.push({
-        name: name,
-        path: `/${name}`,
+        name: match[1],
+        path: `/${match[1]}`,
         component: () => import(`@/docs/${key.slice(2)}`),
       });
     } else {
-      const name = (key.match(/(?<=\.\/).*?(?=\.md)/) || [])[0];
+      const match = key.match(/^\.\/(\S*)\.md/) as string[];
       componentsRoutes.push({
-        name: name,
-        path: `/${name}`,
+        name: match[1],
+        path: `/${match[1]}`,
         component: () => import(`@/docs/${key.slice(2)}`),
       });
     }
