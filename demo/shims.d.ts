@@ -21,7 +21,20 @@ declare module '*.ttf';
 
 declare interface CustomEleProps {
   style: {
-    [key:string]:string
-  }|string,
+    [key: string]: string
+  } | string,
   className: string
+}
+
+declare interface W {
+  style: {
+    [key: string]: string
+  } | string,
+  className: string
+}
+
+interface Window {
+  hljs: {
+    highlightBlock: () => void
+  }
 }
