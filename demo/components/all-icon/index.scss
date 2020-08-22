@@ -11,16 +11,17 @@
     align-items: center;
     justify-content: center;
     width: 140px;
-    height: 100px;
+    height: 120px;
     border: 1px solid $__color_line3;
     border-radius: 4px;
     padding: 0 10px;
     box-sizing: border-box;
     margin: 5px;
 
-    i {
-      font-size: 36px;
-      color: $__color_text3;
+    .fa-icon {
+      font-size: 26px;
+      color: $__color_text4;
+      margin-bottom: 10px;
     }
 
     span {

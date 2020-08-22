@@ -91,6 +91,7 @@
     font-size: 22px;
   }
 
+  p,
   h2,
   h3,
   h4,
@@ -98,14 +99,17 @@
     font-weight: normal;
     color: $__color_text1;
 
-    &:hover a {
+    .header-anchor {
+      opacity: 0;
+    }
+
+    &:hover .header-anchor {
       opacity: 0.5;
     }
 
     a {
       color: $__color_second;
-      margin-right: -20px;
-      opacity: 0;
+      opacity: 1;
       cursor: pointer;
 
       &:hover {

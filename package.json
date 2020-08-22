@@ -9,7 +9,8 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --progress --config ./build/webpack.dev.js",
     "test": "jest",
     "lint:js": "eslint --cache --ext .js,.jsx,.ts,.tsx",
-    "commit": "git-cz --disable-emoji"
+    "commit": "git-cz --disable-emoji",
+    "demo:icon": "node ./bin/generate-icon.js"
   },
   "husky": {
     "hooks": {
@@ -106,9 +107,9 @@
     "webpack-merge": "^5.0.9"
   },
   "dependencies": {
+    "feather-icons": "^4.28.0",
     "highlight.js": "^10.1.2",
     "normalize.css": "^8.0.1",
-    "tabler-icons": "^1.13.1",
     "vue": "^3.0.0-rc.5",
     "vue-router": "^4.0.0-beta.6"
   }

@@ -1,5 +1,6 @@
 import { defineComponent } from 'vue';
 import icons from './icons.json';
+import Icon from '@/packages/icon';
 import './index.scss';
 
 const AllIcon = defineComponent({
@@ -12,8 +13,8 @@ const AllIcon = defineComponent({
               class='all-icon__item'
               key={item}
             >
-              <i class={`ti-${item}`}></i>
-              <span>{`ti-${item}`}</span>
+              <Icon.component icon={item} />
+              <span>{item}</span>
             </div>
           ))}
       </div>

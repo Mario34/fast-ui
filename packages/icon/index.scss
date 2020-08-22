@@ -1,12 +1,13 @@
-[class^="ti-"],
-[class*=" ti-"] {
+[class^="fa-icon"],
+[class*=" fa-icon"] {
   font-family: 'tabler-icons' !important;
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
-  line-height: 1;
+  line-height: 1em;
+  vertical-align: -0.125em;
 
   /* Better Font Rendering */
   -webkit-font-smoothing: antialiased;
