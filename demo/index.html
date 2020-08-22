@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mario34/fast</title>
+  <% if (process.env.NODE_ENV === 'production') { %>
   <script src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
   <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/json.min.js"></script>
   <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/javascript.min.js"></script>
@@ -14,6 +15,7 @@
   <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/typescript.min.js"></script>
   <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/scss.min.js"></script>
   <script src="https://cdn.bootcss.com/highlight.js/9.15.10/languages/less.min.js"></script>
+  <% } %>
 </head>
 
 <body>

@@ -106,6 +106,9 @@ module.exports = {
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
         useShortDoctype: true
+      },
+      templateParameters: {
+        NODE_ENV: process.env.NODE_ENV
       }
     })
   ]
