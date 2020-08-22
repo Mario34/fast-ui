@@ -10,11 +10,13 @@
 
 ```html
 <div class="demo-icon">
-  <i class="ti-alarm"></i>
-  <i class="ti-clock"></i>
-  <i class="ti-bike"></i>
-  <i class="ti-brand-github"></i>
-  <i class="ti-brand-gitlab"></i>
+  <fa-icon icon="at-sign"/>
+  <fa-icon icon="zap"/>
+  <fa-icon icon="umbrella"/>
+  <fa-icon icon="smile"/>
+  <fa-icon icon="music"/>
+  <fa-icon icon="git-merge"/>
+  <fa-icon icon="github"/>
 </div>
 ```
 
