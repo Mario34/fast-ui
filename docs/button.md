@@ -24,11 +24,11 @@
   <fa-button plain>默认按钮</fa-button>
 </fa-row>
 <fa-row :space="0">
-  <fa-button round>次要按钮</fa-button>
-  <fa-button round icon="ti-thumb-up">次要按钮</fa-button>
-  <fa-button circle icon="ti-thumb-down" type="warning"></fa-button>
-  <fa-button circle icon="ti-tool" type="default"></fa-button>
-  <fa-button circle icon="ti-alarm"></fa-button>
+  <fa-button round>默认按钮</fa-button>
+  <fa-button round icon="thumbs-up">默认按钮</fa-button>
+  <fa-button circle icon="star" type="success"></fa-button>
+  <fa-button circle icon="shopping-cart" type="second"></fa-button>
+  <fa-button circle icon="heart" type="danger"></fa-button>
 </fa-row>
 ```
 
@@ -101,11 +101,11 @@
 :::demo 使用`icon`给按钮添加图标，同时也可以直接在 button 内部添加`<i class="icon-class"></i>`实现
 
 ```html
-<fa-button round icon="ti-thumb-up">赞</fa-button>
-<fa-button circle icon="ti-thumb-up" type="success"></fa-button>
-<fa-button round type="danger"><i class="ti-ball-basketball"></i>23</fa-button>
-<fa-button round type="warning"> 24 <i class="ti-ball-basketball"></i></fa-button>
-<fa-button round icon="ti-star" type="primary">收藏</fa-button>
+<fa-button round icon="thumbs-up">赞</fa-button>
+<fa-button circle icon="thumbs-up" type="success"></fa-button>
+<fa-button round type="danger"><fa-icon icon="user" />23</fa-button>
+<fa-button round type="warning">24 <fa-icon icon="user" /></fa-button>
+<fa-button round icon="star" type="primary">收藏</fa-button>
 ```
 
 :::

@@ -1,4 +1,5 @@
 import { defineComponent } from 'vue';
+import Icon from '@/packages/icon';
 import './index.scss';
 
 export interface ButtonProps extends CustomEleProps {
@@ -92,7 +93,7 @@ const Button = defineComponent({
         style={style}
       >
         {loading && <i class='fa-button__loading' />}
-        {icon && <i class={icon} />}
+        {icon && <Icon.component icon={icon} />}
         <span> {_default && _default()} </span>
       </button>
     );
