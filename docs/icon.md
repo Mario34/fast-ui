@@ -2,11 +2,11 @@
 
 ## Icon 图标
 
-使用字体实现的图标组件
+使用SVG Sprite实现的图标组件（基于开源图标 [feathericons](https://github.com/feathericons/feather#svg-sprite)）
 
 ### 基本使用方法
 
-:::demo 引入Icon相应样式，就可以直接使用字体图标
+:::demo 通过`icon`属性指定图标
 
 ```html
 <div class="demo-icon">
