@@ -28,14 +28,6 @@ const Button = defineComponent({
       type: String,
       default: 'default',
     },
-    className: {
-      type: String,
-      default: '',
-    },
-    style: {
-      type: String,
-      default: '',
-    },
     size: {
       type: String,
       default: 'medium',
@@ -67,7 +59,6 @@ const Button = defineComponent({
     const {
       loading,
       disabled,
-      style,
       type,
       size,
       plain,
@@ -90,7 +81,6 @@ const Button = defineComponent({
           [`--loading`]: loading,
         }}
         disabled={disabled}
-        style={style}
       >
         {loading && <i class='fa-button__loading' />}
         {icon && <Icon.component icon={icon} />}
