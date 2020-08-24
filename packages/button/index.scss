@@ -18,10 +18,6 @@
   display: inline-block;
   line-height: 1;
 
-  & [class^="ti-"] {
-    vertical-align: -0.125em;
-  }
-
   & + & {
     margin-left: 10px;
   }
