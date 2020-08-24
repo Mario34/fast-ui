@@ -1,4 +1,4 @@
-import { defineComponent } from 'vue';
+import { defineComponent, toRefs } from 'vue';
 import Icon from '@/packages/icon';
 import './index.scss';
 
@@ -65,25 +65,25 @@ const Button = defineComponent({
       round,
       icon,
       circle,
-    } = props as ButtonProps;
+    } = toRefs(props);
 
     return () => (
       <button
         {...attrs}
         class={{
           'fa-button': true,
-          [`--${type}`]: true,
-          [`--${size}`]: true,
-          [`--plain`]: plain,
-          [`--round`]: round,
-          [`--circle`]: circle,
-          [`--disabled`]: disabled,
-          [`--loading`]: loading,
+          [`--${type.value}`]: true,
+          [`--${size.value}`]: true,
+          [`--round`]: round.value,
+          [`--plain`]: plain.value,
+          [`--circle`]: circle.value,
+          [`--disabled`]: disabled.value,
+          [`--loading`]: loading.value,
         }}
-        disabled={disabled}
+        disabled={disabled.value}
       >
-        {loading && <i class='fa-button__loading' />}
-        {icon && <Icon.component icon={icon} />}
+        {loading.value && <i class='fa-button__loading' />}
+        {icon.value && <Icon.component icon={icon.value} />}
         <span> {_default && _default()} </span>
       </button>
     );
