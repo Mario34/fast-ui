@@ -12,6 +12,7 @@ export const COMPONENTS_GROUP: GroupRule[] = [
       ['layout', '布局'],
       ['icon', '图标'],
       ['button', '按钮'],
+      ['tag', '标签'],
     ],
   },
 ];

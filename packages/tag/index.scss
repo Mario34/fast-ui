@@ -1,0 +1,92 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.fa-tag {
+  border-radius: $__radius_1;
+  transition: background-color 0.1s;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 12px;
+  font-size: 14px;
+  color: $__color_text4;
+  background-color: $__color_white;
+  line-height: 30px;
+
+  & + & {
+    margin-left: 10px;
+  }
+
+  @mixin type-color($type, $color, $bg-color) {
+    &.--#{$type} {
+      color: $color;
+      background-color: $bg-color;
+      border: 1px solid transparent;
+
+      &:hover {
+        background-color: mix($__color_white, $bg-color, 20%);
+      }
+
+      .fa-tag__close {
+        background-color: transparent;
+        &:hover {
+          color: #fff;
+          background-color: mix($__color_white, $color, 20%);
+        }
+      }
+    }
+  }
+
+  @mixin size($size, $font-size, $height, $padding) {
+    &.--#{$size} {
+      font-size: $font-size;
+      line-height: $height;
+      padding: $padding;
+
+      &.--round {
+        border-radius: #{$height/2};
+      }
+
+      .fa-tag__close {
+        height: $size/2/3;
+        width: $size/2/3;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  @include type-color(
+    default,
+    mix($__color_white, $__color_text4, 20%),
+    mix($__color_white, $__color_text4, 92%)
+  );
+  @include type-color(
+    primary,
+    mix($__color_white, $__color_primary, 10%),
+    mix($__color_white, $__color_primary, 90%)
+  );
+  @include type-color(
+    second,
+    mix($__color_white, $__color_second, 0%),
+    mix($__color_white, $__color_second, 82%)
+  );
+  @include type-color(
+    success,
+    mix($__color_white, $__color_success, 30%),
+    mix($__color_white, $__color_success, 90%)
+  );
+  @include type-color(
+    warning,
+    mix($__color_white, $__color_warning, 30%),
+    mix($__color_white, $__color_warning, 90%)
+  );
+  @include type-color(
+    danger,
+    mix($__color_white, $__color_danger, 30%),
+    mix($__color_white, $__color_danger, 90%)
+  );
+
+  @include size(small, 12px, 20px, 0 10px);
+  @include size(medium, 14px, 28px, 0 12px);
+  @include size(large, 16px, 30px, 0 16px);
+}
