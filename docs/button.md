@@ -145,16 +145,6 @@
     <fa-button type="danger">按钮5</fa-button>
   </fa-button-group>
 </fa-row>
-
-<script>
-  export default {
-    methods: {
-      onKeyUp(e) {
-        console.log(e);
-      },
-    },
-  };
-</script>
 ```
 
 :::

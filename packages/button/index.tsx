@@ -80,7 +80,7 @@ const Button = defineComponent({
           [`--disabled`]: disabled.value,
           [`--loading`]: loading.value,
         }}
-        disabled={disabled.value}
+        disabled={disabled.value || loading.value}
       >
         {loading.value && <i class='fa-button__loading' />}
         {icon.value && <Icon.component icon={icon.value} />}
