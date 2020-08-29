@@ -14,6 +14,19 @@ module.exports = {
     ecmaVersion: 2020
   },
   rules: {
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
     '@typescript-eslint/no-unused-vars': [
       1,
       {

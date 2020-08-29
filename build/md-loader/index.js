@@ -43,7 +43,7 @@ module.exports = function(source) {
   let pageScript = '';
   if (componenetsString) {
     pageScript = `<script>
-      import { defineComponent } from 'vue'
+      import Vue,{ defineComponent } from 'vue'
 
       export default {
         name: 'component-doc',

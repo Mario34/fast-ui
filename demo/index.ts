@@ -20,9 +20,12 @@ demoStyles.keys().forEach(key => {
 const components = require.context('@/packages/', true, /index\.tsx$/);
 components.keys().forEach(key => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const module = require(`@/packages/${key.slice(2)}`).default;
-  if (module && module.name) {
-    app.component('fa-' + module.name, module.component);
+  const { name, component, plugin } = require(`@/packages/${key.slice(2)}`).default;
+  if (component) {
+    app.component('fa-' + name, component);
+  }
+  if (plugin) {
+    app.use(plugin);
   }
 });
 app.component('demo-container', DemoContainer);

@@ -2,6 +2,7 @@ import { defineComponent } from 'vue';
 import './index.scss';
 
 const ButtonGroup = defineComponent({
+  name: 'button-group',
   props: {
     space: {
       type: Number,
@@ -19,6 +20,6 @@ const ButtonGroup = defineComponent({
 });
 
 export default {
-  name: 'button-group',
+  name: ButtonGroup.name,
   component: ButtonGroup,
 };
