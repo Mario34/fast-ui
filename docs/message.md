@@ -12,9 +12,9 @@
     v-for="item in buttonList"
     @click="onClick(item.type)"
     :type="item.type"
-    size="mini"
     plain
-  >{{item.text}}</fa-button>
+    >{{item.text}}</fa-button
+  >
 </fa-row>
 
 <script>
@@ -62,3 +62,61 @@
 ```
 
 :::
+
+### 自定义持续时间
+
+:::demo 通过`duration`属性控制消息提示的延迟关闭时间
+
+```html
+<fa-row>
+  <fa-button
+    v-for="item in buttonList"
+    @click="onClick(item.duration)"
+    :duration="item.duration"
+    plain
+    >{{item.text}}</fa-button
+  >
+</fa-row>
+
+<script>
+  export default {
+    data() {
+      return {
+        buttonList: [
+          {
+            duration: 3000,
+            text: "默认3s关闭",
+          },
+          {
+            duration: 5000,
+            text: "5s关闭",
+          },
+          {
+            duration: 10000,
+            text: "10s关闭",
+          }
+        ],
+      };
+    },
+    methods: {
+      onClick(duration) {
+        this.$message({
+          duration,
+          type: 'success',
+          content: `This is a message with a delay of ${duration/1000}s.`,
+        });
+      },
+    },
+  };
+</script>
+```
+
+:::
+
+### message 方法参数
+
+| 参数     | 说明     | required | 类型                                                      | 默认值    |
+| -------- | -------- | -------- | --------------------------------------------------------- | --------- |
+| content  | 消息内容 | 是       | string                                                    | -         |
+| type     | 类型     | 否       | `default` `primary` `second` `success` `danger` `warning` | `default` |
+| duration | 持续时间/ms | 否       | boolean                                                   | `3000`    |
