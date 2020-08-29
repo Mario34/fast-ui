@@ -2,6 +2,7 @@ import { defineComponent, toRefs } from 'vue';
 import './index.scss';
 
 const Col = defineComponent({
+  name: 'col',
   props: {
     col: {
       type: Number,
@@ -30,6 +31,6 @@ const Col = defineComponent({
 });
 
 export default {
-  name: 'col',
+  name: Col.name,
   component: Col,
 };

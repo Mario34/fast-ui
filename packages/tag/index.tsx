@@ -3,14 +3,15 @@ import Icon from '@/packages/icon';
 import './index.scss';
 
 export interface TagProps extends CustomEleProps {
-  color?: 'default' | 'primary' | 'second' | 'success' | 'danger' | 'warning' | 'text',
-  round?: boolean,
-  closable?: boolean,
-  size?: 'small' | 'medium' | 'large',
-  icon?: string
+  color?: 'default' | 'primary' | 'second' | 'success' | 'danger' | 'warning' | 'text';
+  round?: boolean;
+  closable?: boolean;
+  size?: 'small' | 'medium' | 'large';
+  icon?: string;
 }
 
 const Tag = defineComponent({
+  name: 'tag',
   inheritAttrs: false,
   props: {
     color: {
@@ -83,6 +84,6 @@ const Tag = defineComponent({
 });
 
 export default {
-  name: 'tag',
+  name: Tag.name,
   component: Tag,
 };

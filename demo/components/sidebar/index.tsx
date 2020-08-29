@@ -4,20 +4,20 @@ import { useRouter, RouterLink, useRoute } from 'vue-router';
 import './index.scss';
 
 export interface SubItem {
-  title: string,
-  name: string,
+  title: string;
+  name: string;
 }
 
 export interface SidebarConfigItem {
-  title: string,
-  items: SubItem[]
+  title: string;
+  items: SubItem[];
 }
 
 export interface SidebarProps {
   /**
    * Sidebar 配置
   */
-  config: Ref<SidebarConfigItem[]>
+  config: Ref<SidebarConfigItem[]>;
 }
 
 const Sidebar = defineComponent({

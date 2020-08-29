@@ -2,6 +2,7 @@ import { defineComponent } from 'vue';
 import './index.scss';
 
 const Row = defineComponent({
+  name: 'row',
   props: {
     space: {
       type: Number,
@@ -25,6 +26,6 @@ const Row = defineComponent({
 });
 
 export default {
-  name: 'row',
+  name: Row.name,
   component: Row,
 };

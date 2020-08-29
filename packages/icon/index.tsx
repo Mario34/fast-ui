@@ -3,6 +3,7 @@ import sprite from 'feather-icons/dist/feather-sprite.svg';
 import './index.scss';
 
 const Icon = defineComponent({
+  name: 'icon',
   props: {
     icon: {
       type: String,
@@ -35,6 +36,6 @@ const Icon = defineComponent({
 });
 
 export default {
-  name: 'icon',
+  name: Icon.name,
   component: Icon,
 };
