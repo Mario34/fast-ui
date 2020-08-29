@@ -1,0 +1,51 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+#__fa-message-container__ {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.fa-message {
+  min-width: 100px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 16px;
+  border-radius: $__radius_2;
+  padding: 12px 16px;
+  background-color: #fff;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: opacity 0.3s ease, transform 0.2s ease;
+
+  &__icon {
+    margin-right: 10px;
+  }
+
+  &__content {
+    color: $__color_text2;
+    font-size: 14px;
+  }
+
+  &.--before-active {
+    opacity: 0;
+    transform: translate(0, -50%);
+  }
+
+  @mixin type-color($iconColor, $type) {
+    &.--#{$type} {
+      & .fa-message__icon {
+        color: $iconColor;
+      }
+    }
+  }
+
+  @include type-color($__color_text3, default);
+  @include type-color($__color_primary, primary);
+  @include type-color($__color_second, second);
+  @include type-color($__color_success, success);
+  @include type-color($__color_warning, warning);
+  @include type-color($__color_danger, danger);
+}
