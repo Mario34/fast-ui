@@ -17,6 +17,17 @@
     padding: 0 10px;
     box-sizing: border-box;
     margin: 5px;
+    transition: box-shadow 0.2s;
+
+    &:hover {
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+    }
+
+    &:active {
+      cursor: pointer;
+      border: 1px solid $__color_second;
+    }
 
     .fa-icon {
       font-size: 26px;

@@ -149,6 +149,8 @@ function getContainerElm(): Element {
   return container;
 }
 
+export const message = messageMethod;
+
 export default {
   name: Message.name,
   plugin: { install },
