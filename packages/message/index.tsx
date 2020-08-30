@@ -65,7 +65,7 @@ const Message = defineComponent({
 
     return () => {
       return (
-        <div
+        <span
           class={{
             'fa-message': true,
             '--before-active': !mounted.value,
@@ -81,7 +81,7 @@ const Message = defineComponent({
           <span class='fa-message__content'>
             {content}
           </span>
-        </div>
+        </span>
       );
     };
   },
