@@ -25,9 +25,17 @@ const Message = defineComponent({
       type: Number,
       default: 3000,
     },
+    resolve: {
+      type: Function,
+      required: false,
+    },
+    onClose: {
+      type: Function,
+      required: false,
+    },
   },
   setup(props) {
-    const { rootEl, containerEl, content, type, duration } = props;
+    const { rootEl, containerEl, content, type, duration, resolve, onClose } = props;
     const iconMap: { [key: string]: string } = {
       default: 'info',
       success: 'check',
@@ -41,9 +49,10 @@ const Message = defineComponent({
     const delayClose = () => {
       timeout.value = setTimeout(() => {
         mounted.value = false;
+        resolve && resolve();
+        onClose && onClose();
         setTimeout(() => {
           containerEl.removeChild(rootEl);
-          mounted.value = true;
         }, 300);
       }, duration);
     };
@@ -103,18 +112,22 @@ export interface MessageConfig {
    * 持续时间
   */
   duration?: number;
+  onClose?: () => void;
 }
 
 /**
  * 用于唤起消息的方法
 */
 function messageMethod(config: MessageConfig) {
-  const rootEl = getMountElm();
-  createApp(Message, {
-    ...config,
-    rootEl,
-    containerEl: getContainerElm(),
-  }).mount(rootEl);
+  return new Promise((resolve) => {
+    const rootEl = getMountElm();
+    createApp(Message, {
+      ...config,
+      resolve,
+      rootEl,
+      containerEl: getContainerElm(),
+    }).mount(rootEl);
+  });
 }
 
 /**
