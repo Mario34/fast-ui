@@ -8,10 +8,14 @@
   transform: translate(-50%, 0);
 }
 
+[data-prop='__fa-message-root__'] {
+  text-align: center;
+}
+
 .fa-message {
-  min-width: 100px;
+  text-align: left;
+  margin: 0 auto 10px;
   border: 1px solid #f0f0f0;
-  margin-bottom: 16px;
   border-radius: $__radius_2;
   padding: 12px 16px;
   background-color: #fff;
@@ -19,11 +23,14 @@
   opacity: 1;
   transform: translate(0, 0);
   transition: opacity 0.3s ease, transform 0.2s ease;
-
+  display: inline-block;
+  line-height: 18px;
+  
   &__icon {
     margin-right: 10px;
+    vertical-align: text-bottom;
   }
-
+  
   &__content {
     color: $__color_text2;
     font-size: 14px;
