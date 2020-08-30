@@ -94,7 +94,7 @@
           {
             duration: 10000,
             text: "10s关闭",
-          }
+          },
         ],
       };
     },
@@ -102,8 +102,51 @@
       onClick(duration) {
         this.$message({
           duration,
-          type: 'success',
-          content: `This is a message with a delay of ${duration/1000}s.`,
+          type: "success",
+          content: `This is a message with a delay of ${duration / 1000}s.`,
+        });
+      },
+    },
+  };
+</script>
+```
+
+:::
+
+### 消息关闭时的回调
+
+:::demo `onClose`属性方法将会在消息关闭时调用
+
+```html
+<fa-row>
+  <fa-button @click="onClickCallback">关闭后的回调</fa-button>
+  <fa-button @click="onClickPromise">Promise化调用</fa-button>
+</fa-row>
+
+<script>
+  export default {
+    methods: {
+      onClickCallback(content) {
+        this.$message({
+          duration: 1000,
+          content: "callback",
+          onClose: () => {
+            this.$message({
+              type: "success",
+              content: "callback closed",
+            });
+          },
+        });
+      },
+      onClickPromise() {
+        this.$message({
+          duration: 1000,
+          content: "promise",
+        }).then(() => {
+          this.$message({
+            type: "success",
+            content: "promise closed",
+          });
         });
       },
     },
@@ -115,8 +158,9 @@
 
 ### message 方法参数
 
-| 参数     | 说明     | required | 类型                                                      | 默认值    |
-| -------- | -------- | -------- | --------------------------------------------------------- | --------- |
-| content  | 消息内容 | 是       | string                                                    | -         |
-| type     | 类型     | 否       | `default` `primary` `second` `success` `danger` `warning` | `default` |
-| duration | 持续时间/ms | 否       | boolean                                                   | `3000`    |
+| 参数     | 说明         | required | 类型                                                      | 默认值    |
+| -------- | ------------ | -------- | --------------------------------------------------------- | --------- |
+| content  | 消息内容     | 是       | string                                                    | -         |
+| type     | 类型         | 否       | `default` `primary` `second` `success` `danger` `warning` | `default` |
+| duration | 持续时间/ms  | 否       | boolean                                                   | `3000`    |
+| onClose  | 关闭时的回调 | 否       | function                                                  | -         |
