@@ -141,7 +141,7 @@ module.exports = {
     'no-implied-eval': 2,
     'no-multi-spaces': 2,
     'no-multiple-empty-lines': [2, { 'max': 1 }],
-    'no-return-assign': [2, 'except-parens'],
+    'no-return-assign': [0, 'except-parens'],
     'func-call-spacing': 2,
     'no-trailing-spaces': 1,
     'no-unmodified-loop-condition': 2,

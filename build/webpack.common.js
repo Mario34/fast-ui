@@ -1,6 +1,6 @@
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const utils = require('./utils')
 
 module.exports = {
@@ -30,14 +30,15 @@ module.exports = {
         use: [
           { loader: "style-loader" },
           { loader: "css-loader" },
+          { loader: "postcss-loader" },
         ]
       },
       {
         test: /\.scss$/,
         use: [
           { loader: "style-loader" },
-          { loader: "css-loader" },
-          { loader: "sass-loader" }
+          { loader: "postcss-loader" },
+          { loader: "sass-loader" },
         ]
       },
       {
@@ -94,7 +95,7 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new ForkTsCheckerWebpackPlugin(),
+    // new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: utils.resolve('demo/index.html'),
       filename: utils.resolve('dist/index.html'),
