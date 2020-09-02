@@ -18,6 +18,10 @@
   display: inline-block;
   line-height: 1;
 
+  &.--disabled {
+    cursor: not-allowed;
+  }
+
   & + & {
     margin-left: 10px;
   }

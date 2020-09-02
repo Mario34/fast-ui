@@ -160,6 +160,7 @@
 | icon     | 按钮图标 | string                                                           | -         |
 | disabled | 禁用状态 | boolean                                                          | `false`   |
 | loading  | 加载状态 | boolean                                                          | `false`   |
+| size     | 尺寸     | `large` `middle` `small`                                         | `middle`   |
 
 ### Event
 
