@@ -1,0 +1,138 @@
+@import "../styles/variables.scss";
+@import "../styles/mixins.scss";
+
+.fa-input {
+  color: $__color_text3;
+  background-color: $__color_white;
+  display: inline-block;
+  position: relative;
+  width: 200px;
+
+  &__input {
+    display: inline-block;
+    width: 100%;
+    outline: none;
+    box-shadow: none;
+    color: $__color_text3;
+    box-sizing: border-box;
+    background-color: transparent;
+    border: 1px solid $__color_line2;
+    border-radius: $__radius_1;
+    transition: box-shadow 0.3s, border-color 0.2s;
+    position: relative;
+
+    &::placeholder {
+      color: mix($__color_text3, $__color_white, 70%);
+    }
+
+    &:hover {
+      border-color: mix($__color_primary, $__color_white, 40%);
+    }
+
+    &:focus {
+      border-color: mix($__color_primary, $__color_white, 80%);
+      box-shadow: 0 0 6px 0 mix($__color_second, rgba(0, 0, 0, 0), 40%);
+    }
+  }
+
+  @mixin size($size, $font-size, $height, $padding1, $padding2) {
+    &.--#{$size} {
+      font-size: $font-size;
+      height: $height;
+      line-height: $height;
+
+      .fa-input__input {
+        box-sizing: border-box;
+        line-height: $height;
+        padding: $padding1 $padding2;
+      }
+
+      .fa-input__prefix-icon,
+      .fa-input__suffix-icon,
+      .fa-input__clearable-icon {
+        position: absolute;
+        top: #{($height - $font-size) / 2 + 1px};
+        color: $__color_text_light4;
+      }
+
+      &.--prefix-icon {
+        .fa-input__prefix-icon {
+          left: #{($padding2 + $font-size) / 2};
+        }
+
+        .fa-input__input {
+          padding-left: #{$padding2 + $font-size + 4px};
+        }
+      }
+
+      &.--password,
+      &.--suffix-icon {
+        .fa-input__suffix-icon {
+          right: #{($padding2 + $font-size) / 2};
+        }
+
+        .fa-input__input {
+          padding-right: #{$padding2 + $font-size + 4px};
+        }
+      }
+
+      &.--clearable {
+        .fa-input__clearable-icon {
+          transition: opacity 0.2s;
+          right: #{($padding2 + $font-size) / 2};
+          cursor: pointer;
+
+          &:hover {
+            color: $__color_text4;
+          }
+        }
+
+        .fa-input__input {
+          padding-right: #{$padding2 + $font-size + 4px};
+        }
+      }
+
+      &.--clearable.--password,
+      &.--suffix-icon.--password,
+      &.--suffix-icon.--clearable {
+        color: red;
+        .fa-input__clearable-icon {
+          right: #{($padding2 + $font-size) / 2 + $font-size + 4px};
+        }
+
+        .fa-input__input {
+          padding-right: #{$padding2 + ($font-size + 4px) * 2};
+        }
+      }
+    }
+  }
+
+  @include size(small, 12px, 32px, 0, 10px);
+  @include size(medium, 14px, 40px, 0, 14px);
+  @include size(large, 16px, 46px, 0, 18px);
+
+  &.--plain {
+    .fa-input__input {
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  &.--is-error {
+    .fa-input__input {
+      border-color: mix($__color_danger, $__color_white, 100%);
+    }
+  }
+
+  &.--disabled {
+    .fa-input__input,
+    .fa-input__input:hover {
+      background-color: $__color_text_light1;
+      border-color: $__color_line2;
+      cursor: not-allowed;
+      &::placeholder {
+        color: $__color_text_light4;
+      }
+    }
+  }
+}
