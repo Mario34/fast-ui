@@ -59,7 +59,7 @@ const Tag = defineComponent({
           'fa-tag': true,
           [`--${size.value}`]: true,
           [`--${color.value}`]: isPreset,
-          [`--round`]: round,
+          [`--round`]: round.value,
         }}
         style={isPreset ? {} : {
           color: '#fff',
