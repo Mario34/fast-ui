@@ -3,14 +3,14 @@ import Icon from '@/packages/icon';
 import './index.scss';
 
 export interface ButtonProps extends CustomEleProps {
-  disabled?: boolean,
-  loading?: boolean,
-  type?: 'default' | 'primary' | 'second' | 'success' | 'danger' | 'warning' | 'text',
-  plain?: boolean,
-  round?: boolean,
-  circle?: boolean,
-  size?: 'small' | 'medium' | 'large',
-  icon?: string
+  disabled?: boolean;
+  loading?: boolean;
+  type?: 'default' | 'primary' | 'second' | 'success' | 'danger' | 'warning' | 'text';
+  plain?: boolean;
+  round?: boolean;
+  circle?: boolean;
+  size?: 'small' | 'medium' | 'large';
+  icon?: string;
 }
 
 const Button = defineComponent({
