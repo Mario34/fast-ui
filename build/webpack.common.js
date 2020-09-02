@@ -1,6 +1,6 @@
 const { VueLoaderPlugin } = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
+// const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin')
 const utils = require('./utils')
 
 module.exports = {
@@ -95,7 +95,7 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
-    new ForkTsCheckerWebpackPlugin(),
+    // new ForkTsCheckerWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: utils.resolve('demo/index.html'),
       filename: utils.resolve('dist/index.html'),
