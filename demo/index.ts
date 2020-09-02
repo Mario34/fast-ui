@@ -4,6 +4,7 @@ import router from './router';
 import DemoContainer from './components/demo-container';
 import AllIcon from './components/all-icon';
 import '@/demo/styles/index.scss';
+import '@/packages/styles/index.scss';
 import 'normalize.css';
 
 const app = createApp(AppContainer);
