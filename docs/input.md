@@ -196,7 +196,27 @@
 
 :::
 
-### 无标框输入框
+### 不同尺寸
+
+:::demo 使用`size`属性配置输入框的尺寸，默认为`meduim`
+
+```html
+<fa-row>
+  <fa-col :col="6">
+    <fa-input size="small" prefixIcon="github" placeholder="请输入内容" />
+  </fa-col>
+  <fa-col :col="6">
+    <fa-input prefixIcon="github" placeholder="请输入内容" />
+  </fa-col>
+  <fa-col :col="6">
+    <fa-input size="large" prefixIcon="github" placeholder="请输入内容" />
+  </fa-col>
+</fa-row>
+```
+
+:::
+
+### 无边框输入框
 
 :::demo 使用`plain`属性控制输入框是否无标框
 
@@ -245,7 +265,7 @@
 | type           | 输入框类型               | 否       | `text` `textarea` `password` | `text`  |
 | maxlength      | 原生属性                 | 否       | number                       | -       |
 | clearable      | 可清除的（显示清除按钮） | 否       | boolean                      | `false` |
-| size           | 尺寸                     | 否       | string                       | -       |
+| size           | 尺寸                     | 否       | `large` `middle` `small`     | -       |
 | passwordSwitch | 是否显示切换密码显示     | 否       | boolean                      | `false` |
 | disabled       | 禁用                     | 否       | boolean                      | `false` |
 | prefixIcon     | 头部 icon                | 否       | string                       | -       |
