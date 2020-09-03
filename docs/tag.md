@@ -13,7 +13,7 @@
   <fa-tag color="second">标签三</fa-tag>
   <fa-tag color="success">标签四</fa-tag>
   <fa-tag color="warning">标签五</fa-tag>
-  <fa-tag color="danger">标签五</fa-tag>
+  <fa-tag color="danger">标签六</fa-tag>
 </fa-row>
 <fa-row :space="14">
   <fa-tag color="default" round>标签一</fa-tag>
@@ -21,7 +21,7 @@
   <fa-tag color="second" round>标签三</fa-tag>
   <fa-tag color="success" round>标签四</fa-tag>
   <fa-tag color="warning" round>标签五</fa-tag>
-  <fa-tag color="danger" round>标签五</fa-tag>
+  <fa-tag color="danger" round>标签六</fa-tag>
 </fa-row>
 <fa-row>
   <fa-tag icon="at-sign" color="default">标签一</fa-tag>
@@ -29,7 +29,7 @@
   <fa-tag icon="rotate-cw" color="second" round>标签三</fa-tag>
   <fa-tag icon="check" color="success" round>标签四</fa-tag>
   <fa-tag icon="alert-circle" color="warning" round>标签五</fa-tag>
-  <fa-tag icon="delete" color="danger" round>标签五</fa-tag>
+  <fa-tag icon="delete" color="danger" round>标签六</fa-tag>
 </fa-row>
 ```
 
@@ -88,7 +88,7 @@
   <fa-tag closable color="second" round>标签三</fa-tag>
   <fa-tag closable color="success" round>标签四</fa-tag>
   <fa-tag closable color="warning" round>标签五</fa-tag>
-  <fa-tag closable color="danger" round @close="onClose">标签五</fa-tag>
+  <fa-tag closable color="danger" round @close="onClose">标签六</fa-tag>
 </fa-row>
 ```
 
@@ -96,11 +96,11 @@
 
 ### Props
 
-| 参数     | 说明         | 类型                                                      | 默认值    |
-| -------- | ------------ | --------------------------------------------------------- | --------- |
-| color    | 颜色类型     | `default` `primary` `second` `success` `danger` `warning` | `default` |
-| closable | 显示关闭按钮 | boolean                                                   | `false`   |
-| size     | 尺寸         | `small` `medium` `large`                                  |
+| 参数     | 说明         | required | 类型                                                      | 默认值     |
+| -------- | ------------ | -------- | --------------------------------------------------------- | ---------- |
+| color    | 颜色类型     | 否       | `default` `primary` `second` `success` `danger` `warning` | `default`  |
+| closable | 显示关闭按钮 | 否       | boolean                                                   | `false`    |
+| size     | 尺寸         | 否       | `small` `medium` `large`                                  | `medium`｜ |
 
 ### Events
 

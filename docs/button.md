@@ -151,16 +151,16 @@
 
 ### Props
 
-| 参数     | 说明     | 类型                                                             | 默认值    |
-| -------- | -------- | ---------------------------------------------------------------- | --------- |
-| type     | 颜色类型 | `default` `primary` `second` `success` `danger` `warning` `text` | `default` |
-| plain    | 朴素风格 | boolean                                                          | `false`   |
-| round    | 圆角按钮 | boolean                                                          | `false`   |
-| circle   | 圆形按钮 | boolean                                                          | `false`   |
-| icon     | 按钮图标 | string                                                           | -         |
-| disabled | 禁用状态 | boolean                                                          | `false`   |
-| loading  | 加载状态 | boolean                                                          | `false`   |
-| size     | 尺寸     | `large` `middle` `small`                                         | `middle`   |
+| 参数     | 说明     | required | 类型                                                             | 默认值    |
+| -------- | -------- | -------- | ---------------------------------------------------------------- | --------- |
+| type     | 颜色类型 | 否       | `default` `primary` `second` `success` `danger` `warning` `text` | `default` |
+| plain    | 朴素风格 | 否       | boolean                                                          | `false`   |
+| round    | 圆角按钮 | 否       | boolean                                                          | `false`   |
+| circle   | 圆形按钮 | 否       | boolean                                                          | `false`   |
+| icon     | 按钮图标 | 否       | string                                                           | -         |
+| disabled | 禁用状态 | 否       | boolean                                                          | `false`   |
+| loading  | 加载状态 | 否       | boolean                                                          | `false`   |
+| size     | 尺寸     | 否       | `large` `middle` `small`                                         | `middle`  |
 
 ### Event
 
