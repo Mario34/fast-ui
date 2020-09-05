@@ -83,13 +83,26 @@
 
 ```html
 <fa-row>
-  <fa-tag closable :color="color">标签一</fa-tag>
-  <fa-tag closable color="primary">标签二</fa-tag>
-  <fa-tag closable color="second" round>标签三</fa-tag>
-  <fa-tag closable color="success" round>标签四</fa-tag>
-  <fa-tag closable color="warning" round>标签五</fa-tag>
+  <fa-tag closable :color="color" @close="onClose">标签一</fa-tag>
+  <fa-tag closable color="primary" @close="onClose">标签二</fa-tag>
+  <fa-tag closable color="second" round @close="onClose">标签三</fa-tag>
+  <fa-tag closable color="success" round @close="onClose">标签四</fa-tag>
+  <fa-tag closable color="warning" round @close="onClose">标签五</fa-tag>
   <fa-tag closable color="danger" round @close="onClose">标签六</fa-tag>
 </fa-row>
+
+<script>
+  export default {
+    methods: {
+      onClose() {
+        this.$message({
+          type: "success",
+          content: "点击关闭按钮",
+        });
+      },
+    },
+  };
+</script>
 ```
 
 :::
