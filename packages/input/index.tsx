@@ -24,6 +24,7 @@ export interface InputProps extends CustomEleProps {
 }
 
 const Input = defineComponent({
+  inheritAttrs: false,
   props: {
     value: {
       type: [String, Number],
@@ -71,14 +72,8 @@ const Input = defineComponent({
       default: false,
     },
   },
+  emits: ['input', 'update:value', 'change', 'clear'],
   setup(props, ctx) {
-    const {
-      slots: {
-        default: _default,
-      },
-      attrs,
-      emit,
-    } = ctx;
     const {
       value,
       placeholder,
@@ -99,14 +94,18 @@ const Input = defineComponent({
     const onInput = (e: Event) => {
       const target = e.target as HTMLInputElement;
       currentValue.value = target.value;
-      emit('input', target.value);
-      emit('update:value', target.value);
+      ctx.emit('input', target.value);
+      ctx.emit('update:value', target.value);
+    };
+    const onChange = (e: Event) => {
+      const target = e.target as HTMLInputElement;
+      ctx.emit('change', target.value);
     };
     const onClear = () => {
       inputRef.value.focus();
       currentValue.value = '';
-      emit('clear');
-      emit('update:value', '');
+      ctx.emit('clear');
+      ctx.emit('update:value', '');
     };
     const isEmpty = (val: string | null | undefined | number) => val === '' || val === undefined || val === null;
 
@@ -145,8 +144,9 @@ const Input = defineComponent({
           ref={n => inputRef.value = n}
           type={currentType.value}
           value={value?.value}
+          onChange={onChange}
           onInput={onInput}
-          {...attrs}
+          {...ctx.attrs}
         />
         {
           clearable.value && !isEmpty(currentValue.value) && (
