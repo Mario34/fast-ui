@@ -35,6 +35,7 @@ const Tag = defineComponent({
       default: false,
     },
   },
+  emits: ['close'],
   setup(props, ctx) {
     const {
       slots: {
@@ -51,7 +52,10 @@ const Tag = defineComponent({
     } = toRefs(props);
     const preset = ['default', 'primary', 'second', 'success', 'danger', 'warning', 'text'];
     const isPreset = preset.includes(color.value);
-
+    const onClose = (e:Event) => {
+      e.stopPropagation();
+      ctx.emit('close');
+    };
     return () => (
       <span
         {...attrs}
@@ -69,13 +73,11 @@ const Tag = defineComponent({
       >
         {icon.value && <Icon.component icon={icon.value} />}
         <span> {_default && _default()} </span>
-        {closable && (
+        {closable.value && (
           <Icon.component
             class='fa-tag__close'
             icon='x'
-            {...{
-              onClick: (e: Event) => ctx.emit('close', e),
-            }}
+            onClick={onClose}
           />
         )}
       </span>
