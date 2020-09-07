@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 import './index.scss';
 
 const ButtonGroup = defineComponent({
-  name: 'button-group',
+  name: 'fa-button-group',
   props: {
     space: {
       type: Number,

@@ -24,6 +24,7 @@ export interface InputProps extends CustomEleProps {
 }
 
 const Input = defineComponent({
+  name: 'fa-input',
   inheritAttrs: false,
   props: {
     value: {
@@ -182,6 +183,6 @@ const Input = defineComponent({
 });
 
 export default {
-  name: 'input',
+  name: Input.name,
   component: Input,
 };

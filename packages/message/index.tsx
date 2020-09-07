@@ -1,9 +1,9 @@
-import { defineComponent, createApp, App, PropType, onMounted, onBeforeMount, ref, nextTick } from 'vue';
+import { defineComponent, createApp, App, PropType, onMounted, onBeforeMount, ref } from 'vue';
 import Icon from '@/packages/icon';
 import './index.scss';
 
 const Message = defineComponent({
-  name: 'message',
+  name: 'fa-message',
   props: {
     rootEl: {
       type: Element as PropType<Element>,

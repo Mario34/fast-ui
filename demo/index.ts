@@ -23,7 +23,7 @@ components.keys().forEach(key => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const { name, component, plugin } = require(`@/packages/${key.slice(2)}`).default;
   if (component) {
-    app.component('fa-' + name, component);
+    app.component(name, component);
   }
   if (plugin) {
     app.use(plugin);

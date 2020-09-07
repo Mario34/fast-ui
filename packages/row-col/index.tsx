@@ -2,7 +2,7 @@ import { defineComponent, toRefs } from 'vue';
 import './index.scss';
 
 const Col = defineComponent({
-  name: 'col',
+  name: 'fa-col',
   props: {
     col: {
       type: Number,

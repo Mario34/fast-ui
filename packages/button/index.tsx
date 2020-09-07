@@ -14,6 +14,7 @@ export interface ButtonProps extends CustomEleProps {
 }
 
 const Button = defineComponent({
+  name: 'fa-button',
   inheritAttrs: false,
   props: {
     disabled: {
@@ -91,6 +92,6 @@ const Button = defineComponent({
 });
 
 export default {
-  name: 'button',
+  name: Button.name,
   component: Button,
 };

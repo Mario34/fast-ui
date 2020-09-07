@@ -2,7 +2,7 @@ import { defineComponent } from 'vue';
 import './index.scss';
 
 const Row = defineComponent({
-  name: 'row',
+  name: 'fa-row',
   props: {
     space: {
       type: Number,

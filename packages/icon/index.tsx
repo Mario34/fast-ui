@@ -3,7 +3,7 @@ import sprite from 'feather-icons/dist/feather-sprite.svg';
 import './index.scss';
 
 const Icon = defineComponent({
-  name: 'icon',
+  name: 'fa-icon',
   props: {
     icon: {
       type: String,
