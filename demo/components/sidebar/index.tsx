@@ -43,10 +43,10 @@ const Sidebar = defineComponent({
                 {
                   group.items.map((item) => (
                     <div
-                      class={{
-                        'sidebar__group-item': true,
-                        'sidebar__group-item--active': item.name === route.name,
-                      }}
+                      class={[
+                        'sidebar__group-item',
+                        { 'sidebar__group-item--active': item.name === route.name },
+                      ]}
                       key={item.title}
                       onClick={() => {
                         router.push({ name: item.name });

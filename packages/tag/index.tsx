@@ -11,7 +11,7 @@ export interface TagProps extends CustomEleProps {
 }
 
 const Tag = defineComponent({
-  name: 'tag',
+  name: 'fa-tag',
   inheritAttrs: false,
   props: {
     color: {
@@ -59,12 +59,14 @@ const Tag = defineComponent({
     return () => (
       <span
         {...attrs}
-        class={{
-          'fa-tag': true,
-          [`--${size.value}`]: true,
-          [`--${color.value}`]: isPreset,
-          [`--round`]: round.value,
-        }}
+        class={[
+          'fa-tag',
+          `--${size.value}`,
+          {
+            [`--${color.value}`]: isPreset,
+            [`--round`]: round.value,
+          },
+        ]}
         style={isPreset ? {} : {
           color: '#fff',
           borderColor: color.value,
