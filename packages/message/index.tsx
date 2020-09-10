@@ -75,11 +75,13 @@ const Message = defineComponent({
     return () => {
       return (
         <span
-          class={{
-            'fa-message': true,
-            '--before-active': !mounted.value,
-            [`--${type}`]: true,
-          }}
+          class={[
+            'fa-message',
+            `--${type}`,
+            {
+              '--before-active': !mounted.value,
+            },
+          ]}
           onMouseenter={onMouseenter}
           onMouseleave={onMouseleave}
         >

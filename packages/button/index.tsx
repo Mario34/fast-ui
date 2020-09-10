@@ -71,16 +71,18 @@ const Button = defineComponent({
     return () => (
       <button
         {...attrs}
-        class={{
-          'fa-button': true,
-          [`--${type.value}`]: true,
-          [`--${size.value}`]: true,
-          [`--round`]: round.value,
-          [`--plain`]: plain.value,
-          [`--circle`]: circle.value,
-          [`--disabled`]: disabled.value,
-          [`--loading`]: loading.value,
-        }}
+        class={[
+          'fa-button',
+          `--${type.value}`,
+          `--${size.value}`,
+          {
+            [`--round`]: round.value,
+            [`--plain`]: plain.value,
+            [`--circle`]: circle.value,
+            [`--disabled`]: disabled.value,
+            [`--loading`]: loading.value,
+          },
+        ]}
         disabled={disabled.value || loading.value}
       >
         {loading.value && <i class='fa-button__loading' />}

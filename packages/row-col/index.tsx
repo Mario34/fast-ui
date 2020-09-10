@@ -18,11 +18,13 @@ const Col = defineComponent({
     const { col, offset } = toRefs(props);
     return () => (
       <div
-        class={{
-          'fa-col': true,
-          [`fa-col-${col.value || 24}`]: true,
-          [`fa-col-offset-${offset.value}`]: !!offset.value,
-        }}
+        class={[
+          'fa-col',
+          {
+            [`fa-col-${col.value || 24}`]: true,
+            [`fa-col-offset-${offset.value}`]: !!offset.value,
+          },
+        ]}
       >
         {default_ && default_()}
       </div>

@@ -116,18 +116,20 @@ const Input = defineComponent({
 
     return () => (
       <div
-        class={{
-          'fa-input': true,
-          [`--${type.value}`]: true,
-          [`--${size.value}`]: true,
-          [`--disabled`]: disabled.value,
-          [`--prefix-icon`]: prefixIcon?.value,
-          [`--suffix-icon`]: suffixIcon?.value,
-          [`--clearable`]: clearable.value,
-          [`--password`]: passwordSwitch.value,
-          [`--is-error`]: isError.value,
-          [`--plain`]: plain.value,
-        }}
+        class={[
+          'fa-input',
+          `--${type.value}`,
+          `--${size.value}`,
+          {
+            [`--disabled`]: disabled.value,
+            [`--prefix-icon`]: prefixIcon?.value,
+            [`--suffix-icon`]: suffixIcon?.value,
+            [`--clearable`]: clearable.value,
+            [`--password`]: passwordSwitch.value,
+            [`--is-error`]: isError.value,
+            [`--plain`]: plain.value,
+          },
+        ]}
       >
         {
           prefixIcon?.value && (
