@@ -13,8 +13,7 @@
     @click="onClick(item.type)"
     :type="item.type"
     plain
-    >{{item.text}}</fa-button
-  >
+  >{{item.text}}</fa-button>
 </fa-row>
 
 <script>
@@ -74,8 +73,7 @@
     @click="onClick(item.duration)"
     :duration="item.duration"
     plain
-    >{{item.text}}</fa-button
-  >
+  >{{item.text}}</fa-button>
 </fa-row>
 
 <script>

@@ -20,7 +20,7 @@ export const COMPONENTS_GROUP: GroupRule[] = [
     title: '表单数据',
     items: [
       ['input', '输入框'],
-      ['check-box', '多选框*'],
+      ['checkbox', '多选框'],
     ],
   },
   {
