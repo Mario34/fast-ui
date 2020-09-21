@@ -42,7 +42,7 @@
   }
 
   &__catalogue {
-    width: 170px;
+    width: 220px;
     height: 100%;
   }
 }
@@ -58,7 +58,7 @@
     position: fixed;
     right: 0;
     top: 80px;
-    width: 150px;
+    width: 210px;
     border: 1px solid $__color_line2;
     max-height: calc(100vh - 140px);
     overflow: auto;
